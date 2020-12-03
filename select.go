@@ -685,6 +685,8 @@ type MultiSelect struct {
 
 	// HideHelp sets whether to hide help information.
 	HideHelp bool
+	
+	Searcher list.Searcher
 }
 
 func (ms *MultiSelect) Run() ([]int, []string, error) {
@@ -703,6 +705,7 @@ func (ms *MultiSelect) Run() ([]int, []string, error) {
 		HideHelp:     ms.HideHelp,
 		HideSelected: ms.HideSelected,
 		Size:         ms.Size,
+		Searcher:     ms.Searcher,
 		list:         list,
 		multiSelect:  true,
 		Pointer:      ms.Pointer,
